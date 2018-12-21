@@ -11,7 +11,6 @@ sudo apt-get install python-gtk2 -y
 ```
 
 > Important: If you have trouble with installing `WebKit` on your ubuntu, please follow this link [install webkit](https://help.ubuntu.com/community/WebKit) or use deb package in the source packages directory.
-
 This should be work.
 ```
 sudo dpkg -i source_packages/python-webkit_1.1.8-3ubuntu2_amd64.deb
