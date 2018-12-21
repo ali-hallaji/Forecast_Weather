@@ -1,5 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+__author__ = "Ali Hallaji"
+__copyright__ = "Copyright 2k18, The Weather Forecast Application"
+__credits__ = ["Moonshot"]
+__license__ = "GPL"
+__version__ = "1.0.1"
+__maintainer__ = "Ali Hallaji"
+__email__ = "Ali.Hallaji1@gmail.com"
+__status__ = "Test"
 import os
 import gtk
 
