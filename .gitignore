@@ -12,8 +12,7 @@ build/
 develop-eggs/
 dist/
 downloads/
-storage/locations.pdl
-storage/weather_data.pdl
+*.pdl
 eggs/
 .eggs/
 lib/
