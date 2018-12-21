@@ -19,7 +19,7 @@ Then install python packages:
 pip install -r requirments.txt
 ```
 
-For using pygtk into virtualenv make these link to your virtualenv library:
+For using PyGTK into Virtualenv make these link to your virtualenv library:
 ```
 ln -s /usr/lib/python2.7/dist-packages/gtk-2.0/ lib/python2.7/site-packages/
 ln -s /usr/lib/python2.7/dist-packages/gi lib/python2.7/site-packages/
@@ -31,3 +31,7 @@ ln -s /usr/lib/python2.7/dist-packages/webkit/ lib/python2.7/site-packages/
 ```
 
 # Execute and Try
+For running application please use this command:
+```
+python main.py
+```
