@@ -8,6 +8,11 @@ sudo apt-get install python-gtk2
 
 If you have trouble with installing `webkit` on your ubuntu please follow this link [install webkit](https://help.ubuntu.com/community/WebKit) or use deb package in the souce packages directory.
 
+Then install python packages:
+```
+pip install -r requirments.txt
+```
+
 For using pygtk into virtualenv make these link to your virtualenv library:
 ```
 ln -s /usr/lib/python2.7/dist-packages/gtk-2.0/ lib/python2.7/site-packages/
