@@ -11,6 +11,7 @@ class AddLocation():
         self.window = gtk.Window()
         self.window.set_position(gtk.WIN_POS_CENTER)
         self.window.set_title("Add Location")
+        self.window.connect("key-press-event", self._key_press_event)
         self.parent = parent
         self.create_widgets()
         self.window.show_all()
@@ -37,6 +38,15 @@ class AddLocation():
         self.vbox.pack_start(self.hbox_2)
 
         self.window.add(self.vbox)
+
+    def _key_press_event(self, widget, event):
+        keyval = event.keyval
+        keyval_name = gtk.gdk.keyval_name(keyval)
+
+        if keyval_name == 'Return':
+            self.insert_signal(widget)
+        elif keyval_name == 'Escape':
+            self.on_destroy(widget)
 
     def on_destroy(self, widget):
         self.window.hide()

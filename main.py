@@ -15,6 +15,7 @@ from db_handler import get_cursor
 from add_location import AddLocation
 from list_location import ListLocation
 from weather_handler import update_data
+from weather_handler import insert_data
 from history_chart import HistoryChart
 from details import Details
 
@@ -25,6 +26,7 @@ class Application():
         self.window = gtk.Window()
         self.window.set_title("Moonshot Weather Forecast")
         self.window.set_icon_from_file('icons/Weather_icons.png')
+        self.window.connect("key-press-event", self._key_press_event)
         self.window.set_position(gtk.WIN_POS_CENTER)
         self.window.connect("destroy", gtk.main_quit)
         self.window.set_default_size(400, 350)
@@ -115,15 +117,19 @@ class Application():
         self.hbox_info.pack_start(self.vbox_inner2)
 
         self.details_btn = gtk.Button('Details')
+        self.update_btn = gtk.Button('Update')
         self.history_btn = gtk.Button('History')
 
         self.details_btn.set_sensitive(False)
+        self.update_btn.set_sensitive(False)
         self.history_btn.set_sensitive(False)
 
         self.history_btn.connect("clicked", self.make_chart)
+        self.update_btn.connect("clicked", self.single_update)
         self.details_btn.connect("clicked", self.details)
 
         self.hbox_chart_detail.pack_start(self.details_btn)
+        self.hbox_chart_detail.pack_start(self.update_btn)
         self.hbox_chart_detail.pack_start(self.history_btn)
 
         self.vbox.pack_start(toolbar, expand=False, fill=False, padding=0)
@@ -156,6 +162,10 @@ class Application():
     def make_chart(self, widget, data=None):
         HistoryChart(self.selected_combo_name)
 
+    def single_update(self, widget):
+        self.refresh_gui()
+        insert_data(self.selected_combo_name)
+
     def add_location(self, widget):
         AddLocation(self)
 
@@ -164,6 +174,10 @@ class Application():
 
     def list_location(self, widget):
         ListLocation()
+
+    def refresh_gui(self):
+      while gtk.events_pending():
+          gtk.main_iteration_do(block=False)
 
     def refresh_data(self, widget):
         update_data()
@@ -195,6 +209,7 @@ class Application():
         # self.mood.set_from_file("icons/{}.png".format(data['code'].lower()))
 
         self.details_btn.set_sensitive(True)
+        self.update_btn.set_sensitive(True)
         self.history_btn.set_sensitive(True)
 
     def on_changed_combo(self, combo):
@@ -222,6 +237,10 @@ class Application():
 
         self.cb.set_active(0)
         return self.cb
+
+    def _key_press_event(self, widget, event):
+        keyval = event.keyval
+        keyval_name = gtk.gdk.keyval_name(keyval)
 
     def exit_func(self, widget, callback_data=None):
         self.window.destroy()
