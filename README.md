@@ -54,7 +54,7 @@ python main.py
 
 
 ### Details:
-![Detail](https://raw.githubusercontent.com/ali-hallaji/Forecast_Weather/master/icons/detail.png)
+![Detail](https://raw.githubusercontent.com/ali-hallaji/Forecast_Weather/master/icons/details.png)
 
 
 ### Chart:
