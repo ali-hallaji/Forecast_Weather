@@ -31,7 +31,31 @@ ln -s /usr/lib/python2.7/dist-packages/webkit/ lib/python2.7/site-packages/
 ```
 
 # Execute and Try
-For running application please use this command:
+For running application, please use this command:
 ```
 python main.py
 ```
+
+# Screenshots
+### First time opening:
+![First time opening](https://raw.githubusercontent.com/ali-hallaji/Forecast_Weather/master/icons/first_time.png)
+
+
+### Default:
+![Default](https://raw.githubusercontent.com/ali-hallaji/Forecast_Weather/master/icons/default.png)
+
+
+### Add Location:
+![Add Location](https://raw.githubusercontent.com/ali-hallaji/Forecast_Weather/master/icons/add_location.png)
+
+
+### List Location:
+![List Location](https://raw.githubusercontent.com/ali-hallaji/Forecast_Weather/master/icons/list.png)
+
+
+### Details:
+![Detail](https://raw.githubusercontent.com/ali-hallaji/Forecast_Weather/master/icons/detail.png)
+
+
+### Chart:
+![Detail](https://raw.githubusercontent.com/ali-hallaji/Forecast_Weather/master/icons/chart.png)
