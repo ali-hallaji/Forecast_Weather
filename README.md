@@ -6,6 +6,7 @@ It is weather forecast application for Ubuntu desktop.
 Before install you should install these packages on your ubuntu desktop:
 ```
 sudo apt update
+sudo apt-get install libjavascriptcoregtk-1.0-0 libwebkitgtk-1.0-0 -y
 sudo apt-get install python-pip -y
 sudo apt-get install python-gtk2 -y
 ```
